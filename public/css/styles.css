@@ -129,3 +129,9 @@ button:hover{
     color: var(--color-purple);
     background-color: white;
 }
+
+#forecast-icon{
+    max-width: 1.5rem;
+    max-height: 1.5rem;
+    object-fit: contain;
+}

@@ -14,9 +14,10 @@ const forecast = (latitude, longitude, callback) => {
             if (responseBody.error)
                 callback('Unable to get weather information!')
             else {
-                const {weather_descriptions, temperature, feelslike} = responseBody.current,
-                    message = weather_descriptions[0] + ` - It is currently ${temperature}°C out. It feels like ${feelslike}°C out.`           
-                callback(undefined, message);
+                const {weather_descriptions, weather_icons, temperature, feelslike} = responseBody.current,
+                    message = weather_descriptions[0] + ` - It is currently ${temperature}°C out. It feels like ${feelslike}°C out.` 
+                    icon =  weather_icons[0]         
+                callback(undefined, {message, icon});
             }
         }
     })
