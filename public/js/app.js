@@ -15,7 +15,7 @@ const send = (e) => {
     const { value: address } = document.querySelector('input')
     messageOne.textContent = "loading..."
     messageTwo.textContent = ""
-    fetch(`http://localhost:3000/weather?address=${address}`)
+    fetch(`/weather?address=${address}`)
         .then(res => res.json())
         .then(({ error, location, forecast } = {}) => {
             if (error) {
